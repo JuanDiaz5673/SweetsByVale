@@ -650,7 +650,15 @@ section { position: relative; }
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0;
+  filter: blur(6px);
+}
+.gallery-item.fade-in {
+  opacity: 1;
+  filter: blur(0);
 }
 .gallery-item:hover { transform: scale(1.02); }
 .gallery-item img {
@@ -1241,8 +1249,8 @@ footer {
     <p class="hero-flourish">Handcrafted with love in Queens, NY</p>
     <h1 class="hero-title">Sweets by Vale</h1>
     <p class="hero-subtitle">Custom cakes, chocolate-dipped strawberries &amp; sweet creations for every occasion</p>
-    <a href="https://instagram.com/sweetsbyvaleee" target="_blank" rel="noopener" class="hero-cta">
-      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    <a href="#contact" class="hero-cta">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
       Place Your Order
     </a>
   </div>
@@ -1403,8 +1411,8 @@ footer {
       <div class="order-line-fill"></div>
       <div class="order-step reveal reveal-delay-1">
         <div class="order-step-num">1</div>
-        <h3 class="order-step-title">Send a DM</h3>
-        <p class="order-step-desc">Message me on Instagram <a href="https://instagram.com/sweetsbyvaleee" target="_blank" rel="noopener" style="color:var(--rose);text-decoration:none;">@sweetsbyvaleee</a> with your idea.</p>
+        <h3 class="order-step-title">Reach Out</h3>
+        <p class="order-step-desc">Fill out the <a href="#contact" style="color:var(--rose);text-decoration:none;">contact form</a> below with your idea — or DM me on Instagram <a href="https://instagram.com/sweetsbyvaleee" target="_blank" rel="noopener" style="color:var(--rose);text-decoration:none;">@sweetsbyvaleee</a>.</p>
       </div>
       <div class="order-step reveal reveal-delay-2">
         <div class="order-step-num">2</div>
@@ -1429,9 +1437,9 @@ footer {
 <section class="cta-banner">
   <h2 class="cta-banner-title reveal">Ready to Order?</h2>
   <p class="cta-banner-text reveal reveal-delay-1">Let's create something sweet together</p>
-  <a href="https://instagram.com/sweetsbyvaleee" target="_blank" rel="noopener" class="cta-banner-btn reveal reveal-delay-2">
-    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-    DM on Instagram
+  <a href="#contact" class="cta-banner-btn reveal reveal-delay-2">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    Get in Touch
   </a>
 </section>
 
@@ -1573,6 +1581,20 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
 reveals.forEach(el => revealObserver.observe(el));
+
+// ===== GALLERY FADE IN =====
+const galleryItems = document.querySelectorAll('.gallery-item');
+const galleryObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const idx = Array.from(galleryItems).indexOf(el);
+      setTimeout(() => el.classList.add('fade-in'), (idx % 4) * 120);
+      galleryObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.15 });
+galleryItems.forEach(item => galleryObserver.observe(item));
 
 // ===== LIGHTBOX =====
 const lightbox = document.getElementById('lightbox');
