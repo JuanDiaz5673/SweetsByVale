@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>Sweets by Vale — Handcrafted Desserts in Queens, NY</title>
 <meta name="description" content="Custom cakes, chocolate-dipped strawberries, breakable hearts & more. Handmade with love in Sunnyside, Queens. DM to order.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,7 +71,7 @@ body::after {
 /* ============ NAVIGATION ============ */
 nav {
   position: fixed;
-  top: calc(-1 * env(safe-area-inset-top, 0px));
+  top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
@@ -82,6 +83,17 @@ nav {
   transition: all 0.5s ease;
   background: transparent;
 }
+nav::before {
+  content: '';
+  position: absolute;
+  top: calc(-1 * env(safe-area-inset-top, 0px));
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  z-index: -1;
+  transition: background 0.5s ease;
+}
 nav.scrolled {
   background: rgba(255, 250, 248, 0.92);
   backdrop-filter: blur(20px);
@@ -89,6 +101,10 @@ nav.scrolled {
   box-shadow: 0 1px 30px rgba(210, 130, 155, 0.1);
   padding: 0.8rem 2rem;
   padding-top: calc(env(safe-area-inset-top, 0px) + 0.8rem);
+}
+nav.scrolled::before {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 .nav-logo {
   display: inline-flex;
