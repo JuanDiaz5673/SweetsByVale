@@ -198,7 +198,15 @@ nav.scrolled .nav-toggle span {
     transition: opacity 0.4s;
   }
   .nav-links.open { opacity: 1; pointer-events: all; }
-  .nav-links a { font-size: 1rem; }
+  .nav-links a {
+    font-size: 1rem;
+    color: var(--warm-black);
+    text-shadow: none;
+  }
+  .nav-links a:hover { color: var(--rose-deep); }
+  .nav-toggle.active span {
+    background: var(--warm-black);
+  }
 }
 
 /* ============ HERO ============ */
@@ -504,7 +512,7 @@ section { position: relative; }
   .about-images { max-width: 320px; }
   .about-img { padding: 7px 7px 28px 7px; }
   .about-img-1 { width: 62%; }
-  .about-img-2 { width: 45%; }
+  .about-img-2 { width: 43%; right: 2%; top: -2%; }
   .about-img-3 { width: 42%; }
 }
 .about-text .section-text { margin-bottom: 1.5rem; }
