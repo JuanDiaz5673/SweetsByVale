@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Sweets by Vale — Handcrafted Desserts in Queens, NY</title>
 <meta name="description" content="Custom cakes, chocolate-dipped strawberries, breakable hearts & more. Handmade with love in Sunnyside, Queens. DM to order.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,6 +75,7 @@ nav {
   right: 0;
   z-index: 1000;
   padding: 1.2rem 2rem;
+  padding-top: calc(env(safe-area-inset-top, 0px) + 1.2rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -87,6 +88,7 @@ nav.scrolled {
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 1px 30px rgba(210, 130, 155, 0.1);
   padding: 0.8rem 2rem;
+  padding-top: calc(env(safe-area-inset-top, 0px) + 0.8rem);
 }
 .nav-logo {
   display: inline-flex;
